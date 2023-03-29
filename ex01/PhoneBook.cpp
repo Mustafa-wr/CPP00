@@ -20,6 +20,42 @@ PhoneBook::PhoneBook() : m_nbContacts(0)
 {
 }
 
+// void PhoneBook::addContact()
+// {
+//     if (m_nbContacts == 8)
+//     {
+//         std::cout << "Phone book is full. Overwriting the oldest contact." << std::endl;
+//         m_nbContacts = 7; // set the index to the last contact
+//     }
+
+//     Contact contact;
+//     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
+
+//     std::cout << "Enter the first name: ";
+//     std::getline(std::cin >> std::ws, firstName);
+
+//     std::cout << "Enter the last name: ";
+//     std::getline(std::cin >> std::ws, lastName);
+
+//     std::cout << "Enter the nickname: ";
+//     std::getline(std::cin >> std::ws, nickname);
+
+//     std::cout << "Enter the phone number: ";
+//     std::getline(std::cin >> std::ws, phoneNumber);
+
+//     std::cout << "Enter the darkest secret: ";
+//     std::getline(std::cin >> std::ws, darkestSecret);
+
+//     contact.setFirstName(firstName);
+//     contact.setLastName(lastName);
+//     contact.setNickname(nickname);
+//     contact.setPhoneNumber(phoneNumber);
+//     contact.setDarkestSecret(darkestSecret);
+
+//     m_contacts[m_nbContacts % 8] = contact; // use modulo operator to overwrite the oldest contact
+//     m_nbContacts++;
+// }
+
 void PhoneBook::addContact()
 {
     if (m_nbContacts == 8)
@@ -29,28 +65,27 @@ void PhoneBook::addContact()
     }
 
     Contact contact;
-    std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
+    std::string input;
 
     std::cout << "Enter the first name: ";
-    std::getline(std::cin >> std::ws, firstName);
+    std::cin >> input;
+    contact.setFirstName(input);
 
     std::cout << "Enter the last name: ";
-    std::getline(std::cin >> std::ws, lastName);
+    std::cin >> input;
+    contact.setLastName(input);
 
     std::cout << "Enter the nickname: ";
-    std::getline(std::cin >> std::ws, nickname);
+    std::cin >> input;
+    contact.setNickname(input);
 
     std::cout << "Enter the phone number: ";
-    std::getline(std::cin >> std::ws, phoneNumber);
+    std::cin >> input;
+    contact.setPhoneNumber(input);
 
     std::cout << "Enter the darkest secret: ";
-    std::getline(std::cin >> std::ws, darkestSecret);
-
-    contact.setFirstName(firstName);
-    contact.setLastName(lastName);
-    contact.setNickname(nickname);
-    contact.setPhoneNumber(phoneNumber);
-    contact.setDarkestSecret(darkestSecret);
+    std::cin >> input;
+    contact.setDarkestSecret(input);
 
     m_contacts[m_nbContacts % 8] = contact; // use modulo operator to overwrite the oldest contact
     m_nbContacts++;

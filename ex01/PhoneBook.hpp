@@ -14,6 +14,9 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <limits>  // for std::numeric_limits
+#include <iostream>  // for std::cin and std::cout
+#include <iomanip>  // for std::setw
 
 class PhoneBook
 {
