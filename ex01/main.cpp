@@ -23,9 +23,6 @@ int main(void)
     while (true)
     {
         std::cout << "Enter the command >";
-        // std::cout << "2. Display all contacts" << std::endl;
-        // std::cout << "3. Exit" << std::endl;
-        // std::cout << "Enter your choice: ";
 
         std::cin >> choice;
 
@@ -44,25 +41,3 @@ int main(void)
     }
     return (0);
 }
-
-// int	main(void)
-// {
-// 	PhoneBook 	ph1;
-// 	std::string	str;
-
-// 	while (str != "EXIT")
-// 	{
-// 		std::cout << "Enter a command > ";
-// 		std::getline(std::cin, str);
-// 		if (str == "ADD")
-// 			ph1.addContact();
-// 		else if (str == "SEARCH")
-// 			ph1.searchContacts();
-// 		if (std::cin.eof())
-// 		{
-// 			std::cout << std::endl;
-// 			return (0);
-// 		}
-// 	}
-// 	return (0);
-// }
