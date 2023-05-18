@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:55:46 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/18 14:17:40 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/17 21:02:57 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string name)
 	Hit_points = 10;
 	Energy_points = 10;
 	Attack_damage = 0;
-	std::cout << "claptrap constructor called  name: " << name << std::endl;
+	std::cout << "constructor called  name: " << name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
@@ -47,7 +47,7 @@ void	ClapTrap::attack(const std::string &target)
 {
 	if (Energy_points > 0)
 	{
-		std::cout << "claptrap " << _name << " attack " << target << " causing " << Attack_damage << "of damage" << std::endl;
+		std::cout << "claptrap " << _name << " attack " << target << " causing " << Attack_damage << " of damage" << std::endl;
 		Energy_points -= 1;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:33:22 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/17 21:13:18 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/17 21:13:33 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,3 @@ void	ScavTrap::guardGate()
 {
 	std::cout << _name << " now is in gatekeeper mode " << std::endl;
 }
-
-
-// void ScavTrap::print_info() 
-// {
-// 	std::cout << "Energy points " << Energy_points << std::endl;
-// 	std::cout << "Hit Points " << Hit_points << std::endl;
-	
-// }

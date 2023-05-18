@@ -6,11 +6,13 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:55:46 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/17 17:15:23 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/17 21:02:47 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() {}
 
 ClapTrap::ClapTrap(std::string name)
 {
@@ -18,7 +20,7 @@ ClapTrap::ClapTrap(std::string name)
 	Hit_points = 10;
 	Energy_points = 10;
 	Attack_damage = 0;
-	std::cout << "constructor called  name: " << name << std::endl;
+	std::cout << "ClapTrap constructor called  name: " << name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
@@ -38,7 +40,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &Or)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "destructor called name: " << _name << std::endl;
+	std::cout << "ClapTrap destructor called name: " << _name << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
@@ -57,7 +59,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if((unsigned int)Hit_points > 0)
 	{
 		Hit_points -= amount;
-		std::cout << " claptrap git damage for " << amount << " hits " << std::endl;
+		std::cout << "claptrap git damage for " << amount << " hits " << std::endl;
 		if(Hit_points < 0)
 			Hit_points = 0;
 	}

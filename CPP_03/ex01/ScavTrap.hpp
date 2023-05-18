@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:33:16 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/16 22:07:06 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/18 14:18:31 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScavTrap : public ClapTrap
 {
 public:
+	ScavTrap();
 	ScavTrap(const std::string &name);
 	ScavTrap(const ScavTrap &src);
 	ScavTrap &operator=(const ScavTrap &Or);
@@ -26,5 +27,6 @@ public:
 	void	attack(const std::string &target);
 	void	guardGate();
 };
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:56:03 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/16 22:04:51 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/17 21:00:43 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ protected:
 	int			Attack_damage;
 
 public:
+	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &src);
 	ClapTrap &operator = (const ClapTrap &Or);

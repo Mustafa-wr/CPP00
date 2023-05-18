@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:56:03 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/18 14:17:21 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/17 21:01:24 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ClapTrap
 {
 
-private:
+protected:
 	std::string _name;
 	int			Hit_points;
 	int			Energy_points;

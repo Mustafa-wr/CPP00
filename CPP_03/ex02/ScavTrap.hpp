@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 14:55:34 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/17 21:00:00 by mradwan          ###   ########.fr       */
+/*   Created: 2023/05/16 20:33:16 by mradwan           #+#    #+#             */
+/*   Updated: 2023/05/17 21:02:10 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
+#include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : public ClapTrap
 {
-	ScavTrap l("john");
+public:
+	ScavTrap();
+	ScavTrap(const std::string &name);
+	ScavTrap(const ScavTrap &src);
+	ScavTrap &operator=(const ScavTrap &Or);
+	~ScavTrap();
+	
+	void	attack(const std::string &target);
+	void	guardGate();
+};
 
-	l.attack("enemy");
-	l.takeDamage(10);
-	l.takeDamage(9);
-	l.takeDamage(9);
-}
+#endif

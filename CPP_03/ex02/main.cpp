@@ -6,18 +6,16 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:55:34 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/17 21:00:00 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/17 21:14:26 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-
+#include "FragTrap.hpp"
 
 int main()
 {
-	ScavTrap l("john");
+	FragTrap l("john");
 
-	l.attack("enemy");
 	l.takeDamage(10);
 	l.takeDamage(9);
 	l.takeDamage(9);
