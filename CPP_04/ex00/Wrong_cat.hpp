@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Wrong_cat.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 15:40:41 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/19 18:13:49 by mradwan          ###   ########.fr       */
+/*   Created: 2023/05/19 17:56:57 by mradwan           #+#    #+#             */
+/*   Updated: 2023/05/19 18:00:17 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef WRONG_CAT_HPP
+#define WRONG_CAT_HPP
 
-int main()
+#include "Wrong_animal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	const Animal *l = new Animal();
-	const Animal *a = new Cat();
-	const Animal *d = new Dog();
+public:
+	WrongCat();
+	WrongCat(const WrongCat &src);
+	WrongCat &operator=(const WrongCat &Or);
+	~WrongCat();
 
-	std::cout << l->getType() << std::endl;
-	std::cout << a->getType() << std::endl;
-	std::cout << d->getType() << std::endl;
-	l->makeSound();
-	a->makeSound();
-	d->makeSound();
+	void makeSound() const;
+};
 
-	delete l;
-	delete a;
-	delete d;
-}
-
+#endif

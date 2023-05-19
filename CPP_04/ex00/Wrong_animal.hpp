@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Wrong_animal.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 15:40:41 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/19 18:13:49 by mradwan          ###   ########.fr       */
+/*   Created: 2023/05/19 17:52:08 by mradwan           #+#    #+#             */
+/*   Updated: 2023/05/19 17:57:51 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef WRONG_ANIMAL
+#define WRONG_ANIMAL
 
-int main()
+#include <iostream>
+
+class WrongAnimal
 {
-	const Animal *l = new Animal();
-	const Animal *a = new Cat();
-	const Animal *d = new Dog();
+protected:
+	std::string type;
 
-	std::cout << l->getType() << std::endl;
-	std::cout << a->getType() << std::endl;
-	std::cout << d->getType() << std::endl;
-	l->makeSound();
-	a->makeSound();
-	d->makeSound();
+public:
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &src);
+	WrongAnimal &operator=(const WrongAnimal &Or);
+	~WrongAnimal();
+	std::string getType() const;
+	virtual void makeSound() const;
+};
 
-	delete l;
-	delete a;
-	delete d;
-}
-
+#endif

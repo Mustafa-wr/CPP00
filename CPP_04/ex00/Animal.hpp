@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:29:18 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/19 15:54:42 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/19 18:12:03 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Animal();
 	Animal(const Animal &src);
 	Animal &operator=(const Animal &Or);
-	~Animal();
+	virtual ~Animal();
 	std::string getType() const;
 	virtual void makeSound() const;
 };

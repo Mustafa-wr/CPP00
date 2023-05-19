@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:35:57 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/19 15:57:46 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/19 17:33:15 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Animal::Animal()
 {
 	type = "Animal";
-	std::cout << "Default Animal constructor called type: " << type << std::endl;
+	std::cout << "Default Animal constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &src)

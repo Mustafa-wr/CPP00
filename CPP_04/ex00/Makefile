@@ -1,7 +1,10 @@
 NAME	=	animal
 
-SRCS	=	Animal.cpp		\
-			Cat.cpp			\
+SRCS	=	Animal.cpp			\
+			Cat.cpp				\
+			Dog.cpp				\
+			Wrong_animal.cpp	\
+			Wrong_cat.cpp		\
 			main.cpp
 
 CC		=	c++
