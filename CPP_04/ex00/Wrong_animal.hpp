@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:52:08 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/19 17:57:51 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/20 15:34:40 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	WrongAnimal &operator=(const WrongAnimal &Or);
 	~WrongAnimal();
 	std::string getType() const;
-	virtual void makeSound() const;
+	void makeSound() const;
 };
 
 #endif

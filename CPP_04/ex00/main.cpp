@@ -6,12 +6,13 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:40:41 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/19 22:35:18 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/20 15:34:14 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Wrong_cat.hpp"
 
 /*
 Virtual functions should be accessed using a pointer or reference of 
@@ -34,8 +35,8 @@ int main()
 	// delete l;
 	// delete a;
 	// delete d;
+	const WrongAnimal *a = new WrongCat();
+	a->makeSound();
 
-	Cat a;
-	Cat tmp = a;
 }
 

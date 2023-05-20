@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wrong_animal.hpp                                   :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 17:52:08 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/20 15:35:15 by mradwan          ###   ########.fr       */
+/*   Created: 2023/05/19 18:47:23 by mradwan           #+#    #+#             */
+/*   Updated: 2023/05/19 20:25:52 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL
-#define WRONG_ANIMAL
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
+#include <string>
 #include <iostream>
 
-class WrongAnimal
-{
-protected:
-	std::string type;
+class Brain {
+private:
+    std::string _ideas[100];
 
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal &src);
-	WrongAnimal &operator=(const WrongAnimal &Or);
-	~WrongAnimal();
-	std::string getType() const;
-	void makeSound() const;
+    Brain();
+    Brain& operator=(const Brain &Or);
+    Brain(const Brain &src);
+    ~Brain();
+
+    void set_idea(int i, const std::string &idea);
+    std::string get_idea(int i) const;
 };
 
 #endif
