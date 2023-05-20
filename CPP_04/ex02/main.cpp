@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:40:41 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/20 15:43:45 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/20 16:31:03 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ int main()
 	std::cout << a->getType() << std::endl;
 	std::cout << d->getType() << std::endl;
 
-
-	// Cat b;
-	// Cat tmp = b;
 	a->makeSound();
 	d->makeSound();
 

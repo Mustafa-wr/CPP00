@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:40:41 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/20 15:34:14 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/20 15:52:31 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 #include "Dog.hpp"
 #include "Wrong_cat.hpp"
 
-/*
-Virtual functions should be accessed using a pointer or reference of 
-base class type to achieve runtime polymorphism.
-*/
 
 int main()
 {
