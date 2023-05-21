@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:40:41 by mradwan           #+#    #+#             */
-/*   Updated: 2023/05/20 16:31:03 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/20 17:09:36 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 
 int main()
 {
-	const Animal *a = new Cat();
-	const Animal *d = new Dog();
-
-	std::cout << a->getType() << std::endl;
-	std::cout << d->getType() << std::endl;
-
-	a->makeSound();
-	d->makeSound();
-
-	delete a;
-	delete d;
-
+	// const Animal *a = new Cat();
+	// const Animal *d = new Dog();
 	
-}
+	// std::cout << a->getType() << std::endl;
+	// std::cout << d->getType() << std::endl;
 
+	// a->makeSound();
+	// d->makeSound();
+
+	// delete a;
+	// delete d;
+	Dog a;
+	Dog tmp = a;
+}

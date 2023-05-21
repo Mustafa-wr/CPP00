@@ -6,93 +6,56 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 01:43:22 by mradwan           #+#    #+#             */
-/*   Updated: 2023/03/29 02:02:35 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/05/21 18:43:44 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include <iostream>
-#include <iostream>
-#include <iomanip>
 #include "PhoneBook.hpp"
+#include <chrono>
+#include <ctime>
 
 PhoneBook::PhoneBook() : m_nbContacts(0)
 {
 }
 
-// void PhoneBook::addContact()
-// {
-//     if (m_nbContacts == 8)
-//     {
-//         std::cout << "Phone book is full. Overwriting the oldest contact." << std::endl;
-//         m_nbContacts = 7; // set the index to the last contact
-//     }
-
-//     Contact contact;
-//     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
-
-//     std::cout << "Enter the first name: ";
-//     std::getline(std::cin >> std::ws, firstName);
-
-//     std::cout << "Enter the last name: ";
-//     std::getline(std::cin >> std::ws, lastName);
-
-//     std::cout << "Enter the nickname: ";
-//     std::getline(std::cin >> std::ws, nickname);
-
-//     std::cout << "Enter the phone number: ";
-//     std::getline(std::cin >> std::ws, phoneNumber);
-
-//     std::cout << "Enter the darkest secret: ";
-//     std::getline(std::cin >> std::ws, darkestSecret);
-
-//     contact.setFirstName(firstName);
-//     contact.setLastName(lastName);
-//     contact.setNickname(nickname);
-//     contact.setPhoneNumber(phoneNumber);
-//     contact.setDarkestSecret(darkestSecret);
-
-//     m_contacts[m_nbContacts % 8] = contact; // use modulo operator to overwrite the oldest contact
-//     m_nbContacts++;
-// }
-
 void PhoneBook::addContact()
 {
     if (m_nbContacts == 8)
-    {
         std::cout << "Phone book is full. Overwriting the oldest contact." << std::endl;
-        m_nbContacts = 7; // set the index to the last contact
-    }
 
     Contact contact;
-    std::string input;
+    std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 
     std::cout << "Enter the first name: ";
-    std::cin >> input;
-    contact.setFirstName(input);
+    if (!(std::getline(std::cin >> std::ws, firstName)))
+		return ;
 
     std::cout << "Enter the last name: ";
-    std::cin >> input;
-    contact.setLastName(input);
+    if(!(std::getline(std::cin >> std::ws, lastName)))
+		return ;
 
     std::cout << "Enter the nickname: ";
-    std::cin >> input;
-    contact.setNickname(input);
+    if(!(std::getline(std::cin >> std::ws, nickname)))
+		return ;
 
     std::cout << "Enter the phone number: ";
-    std::cin >> input;
-    contact.setPhoneNumber(input);
+    if(!(std::getline(std::cin >> std::ws, phoneNumber)))
+		return ;
 
     std::cout << "Enter the darkest secret: ";
-    std::cin >> input;
-    contact.setDarkestSecret(input);
+    if(!(std::getline(std::cin >> std::ws, darkestSecret)))
+		return ;
 
-    m_contacts[m_nbContacts % 8] = contact; // use modulo operator to overwrite the oldest contact
+    contact.setFirstName(firstName);
+    contact.setLastName(lastName);
+    contact.setNickname(nickname);
+    contact.setPhoneNumber(phoneNumber);
+    contact.setDarkestSecret(darkestSecret);
+    m_contacts[m_nbContacts % 8] = contact;
     m_nbContacts++;
 }
 
-
-void PhoneBook::searchContacts() const
+void PhoneBook::searchContacts()
 {
     if (m_nbContacts == 0)
     {
@@ -111,13 +74,36 @@ void PhoneBook::searchContacts() const
 
     for (int i = 0; i < m_nbContacts; i++)
     {
+		if(i == 8)
+		{
+			 break;
+		}
+        std::string firstName = m_contacts[i].getFirstName();
+        std::string lastName = m_contacts[i].getLastName();
+        std::string nickname = m_contacts[i].getNickname();
+
+        if (firstName.length() > 9) {
+            firstName.replace(9, 1, ".");
+            firstName = firstName.substr(0, 10);
+        }
+
+        if (lastName.length() > 9) {
+            lastName.replace(9, 1, ".");
+            lastName = lastName.substr(0, 10);
+        }
+
+        if (nickname.length() > 9) {
+            nickname.replace(9, 1, ".");
+            nickname = nickname.substr(0, 10);
+        }
+		
         std::cout << std::setw(10) << i
                   << "|"
-                  << std::setw(10) << m_contacts[i].getFirstName().substr(0, 10)
+                  << std::setw(10) << firstName
                   << "|"
-                  << std::setw(10) << m_contacts[i].getLastName().substr(0, 10)
+                  << std::setw(10) << lastName
                   << "|"
-                  << std::setw(10) << m_contacts[i].getNickname().substr(0, 10)
+                  << std::setw(10) << nickname
                   << "|" << std::endl;
     }
 
@@ -125,12 +111,12 @@ void PhoneBook::searchContacts() const
     std::cout << "Enter the index of the contact you want to view: ";
     std::cin >> index;
 
-    if (std::cin.fail() || index < 0 || index >= m_nbContacts)
+    if (std::cin.fail() || index < 0 || index >= 9)
     {
         std::cout << "Invalid index." << std::endl;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        return;
+        return ;
     }
 
     std::cout << "First name: " << m_contacts[index].getFirstName() << std::endl;

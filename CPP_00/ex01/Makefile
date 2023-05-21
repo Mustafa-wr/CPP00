@@ -6,14 +6,14 @@ SRCS	=	Contact.cpp		\
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 
 
 OBJS	=	$(SRCS:.cpp=.o)
 
 all: 		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
+			$(CC) $(OBJS) $(CXXFLAGS) -o $(NAME)
 
 clean:
 			rm -f $(OBJS)

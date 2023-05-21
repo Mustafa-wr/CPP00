@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:18:20 by mradwan           #+#    #+#             */
-/*   Updated: 2023/03/28 23:25:19 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/04/10 18:05:23 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,25 @@ void Contact::setDarkestSecret(std::string darkestSecret)
 
 std::string Contact::getFirstName() const
 {
-    return m_firstName;
+    return (m_firstName);
 }
 
 std::string Contact::getLastName() const
 {
-    return m_lastName;
+    return (m_lastName);
 }
 
 std::string Contact::getNickname() const
 {
-    return m_nickname;
+    return (m_nickname);
 }
 
 std::string Contact::getPhoneNumber() const
 {
-    return m_phoneNumber;
+    return (m_phoneNumber);
 }
 
 std::string Contact::getDarkestSecret() const
 {
-    return m_darkestSecret;
+    return (m_darkestSecret);
 }
