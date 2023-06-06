@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:03:04 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/05 20:46:30 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/06 16:16:15 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,18 @@ const char *Form::GradeTooLowException::what() const throw()
 }
 
 Form::Form(const std::string &name, int gradeRequiredToSign, int gradeRequiredToExecute) :
-_name(name), _gradeRequiredToSign(gradeRequiredToSign), _gradeRequiredToExecute(gradeRequiredToExecute)
+_name(name), s(false), _gradeRequiredToSign(gradeRequiredToSign), _gradeRequiredToExecute(gradeRequiredToExecute)
+
 {
+	if(_gradeRequiredToExecute < 1 || _gradeRequiredToSign < 1)
+		throw GradeTooHighException();
+	else if(_gradeRequiredToExecute > 150 || _gradeRequiredToSign > 150)
+		throw GradeTooLowException();
+}
+
+std::ostream &operator<<(std::ostream &out, const Form &F)
+{
+	out << "Form for " << F.getName() << " his grade " << \
+		(F.get_isSigned() ? "signed" : "not signed");
+	return out; 
 }

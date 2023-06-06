@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:19:52 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/05 19:53:09 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/06 15:46:48 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define BUREACRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
 
@@ -44,7 +47,7 @@ public:
 	const std::string	getName() const;
 	int 				getGrade() const;
 
-	// void	signForm();
+	void	signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &B);

@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:20:05 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/05 16:20:10 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/06 14:39:12 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,18 @@ void Bureaucrat::incrementGrade()
     _grade++;
 }
 
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what();
+	}
+}
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &B)
 {

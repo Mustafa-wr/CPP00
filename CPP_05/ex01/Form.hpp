@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 12:02:56 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/05 19:53:14 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/06 15:46:08 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define FORM_HPP
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -51,5 +53,7 @@ public:
 	void beSigned(const Bureaucrat &bureaucrat);
 
 };
+
+std::ostream &operator<<(std::ostream &out, const Form &F);
 
 #endif
