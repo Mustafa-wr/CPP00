@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 12:03:04 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/11 22:06:24 by mradwan          ###   ########.fr       */
+/*   Created: 2023/06/06 17:51:59 by mradwan           #+#    #+#             */
+/*   Updated: 2023/06/11 15:41:12 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Form::Form() : _gradeRequiredToSign(0), _gradeRequiredToExecute(0)
 {
@@ -81,6 +81,7 @@ const char *Form::GradeTooLowException::what() const throw()
 
 Form::Form(const std::string &name, int gradeRequiredToSign, int gradeRequiredToExecute) :
 _name(name), s(false), _gradeRequiredToSign(gradeRequiredToSign), _gradeRequiredToExecute(gradeRequiredToExecute)
+
 {
 	if(_gradeRequiredToExecute < 1 || _gradeRequiredToSign < 1)
 		throw GradeTooHighException();
@@ -94,3 +95,5 @@ std::ostream &operator<<(std::ostream &out, const Form &F)
 		(F.get_isSigned() ? "signed" : "not signed");
 	return out; 
 }
+
+

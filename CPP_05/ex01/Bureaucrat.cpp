@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:20:05 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/06 14:39:12 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/11 15:39:34 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,19 @@
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Bureaucrat Deafault constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat Destructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const &src)
 {
-	std::cout << "Bureaucrat copy constructor called" << std::endl;
 	*this = src;
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &Or)
 {
-	std::cout << "Bureaucrat copy operator constructor called" << std::endl;
 	_grade = Or._grade;
 	return (*this);
 }
@@ -47,7 +43,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat args constructor called" << std::endl;
 	if(grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
