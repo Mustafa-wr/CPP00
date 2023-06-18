@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_H
-#define SERIALIZER_H
+#ifndef SERIALIZATION_H
+#define SERIALIZATION_H
 
-#include <cstdint>
+#include <stdint.h>
 
 class Data
 {

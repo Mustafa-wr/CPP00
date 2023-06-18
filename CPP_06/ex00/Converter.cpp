@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:08:08 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/15 16:38:23 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/18 15:53:05 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	ft_isprint(int c)
 	if (c >= 32 && c < 127)
 		return (1);
 	return (0);
+}
+
+int	ft_isdigit(int c)
+{
+	return(c >= '0' && c<= '9');
 }
 
 void	ScalarConverter::convert(std::string &l)
@@ -47,33 +52,27 @@ void	ScalarConverter::convertInt(std::string &l)
 
 void	ScalarConverter::convertDouble(std::string &l)
 {
-	if (l == "nan" || l == "+inf" || l == "-inf")
-		std::cout << "double : " << l << std::endl;
-	else if (l == "nanf")
-		std::cout << "double : " << "nan" << std::endl;
-	else if (l == "+inff")
-		std::cout << "double : " << "+inf" << std::endl;
-	else if (l == "-inff")
-		std::cout << "double : " << "-inf" << std::endl;
-	else if (l[l.length() - 1] == 'f')
-		std::cout << "double : "  << l.substr(0, l.length() - 1) << std::fixed << std::setprecision(1) << std::endl;
+	double num = 0;
+	if (l.length() == 1 && !ft_isdigit(l[0]))
+		num = (double)(l[0]);
 	else
-		std::cout << "double : " << std::fixed << std::setprecision(1) << std::stod(l)  << std::endl;
+		num = std::atof(l.c_str());
+	if (num - (int)(num) == 0)
+		std::cout << "double: " << num << ".0" << std::endl;
+	else
+		std::cout << "double: " << num << std::endl;
 }
 
 void	ScalarConverter::convertFloat(std::string &l)
 {
-	if (l == "nanf" || l == "+inff" || l == "-inff")
-		std::cout << "float : " << l << std::endl;
-	else if (l == "nan")
-		std::cout << "float : "<< "nanf" << std::endl;
-	else if (l == "+inf")
-		std::cout << "float : "<< "+inff" << std::endl;
-	else if (l == "-inf")
-		std::cout << "float : "<< "-inff" << std::endl;
-	else if (l[l.length() - 1] != 'f')
-		std::cout << "float : "<< std::fixed << std::setprecision(1) << std::stof(l) << "f" << std::endl;
+	float num = 0;
+	if (l.length() == 1 && !ft_isdigit(l[0]))
+		num = (float)(l[0]);
 	else
-		std::cout << "float : " << std::fixed << std::setprecision(1) << std::stof(l) << "f"  << std::endl;
+		num = std::atof(l.c_str());
+	if (num - (int)(num) == 0)
+		std::cout << "float: " << num << ".0f" << std::endl;
+	else
+		std::cout << "float: " << num << "f" << std::endl;
 }
 

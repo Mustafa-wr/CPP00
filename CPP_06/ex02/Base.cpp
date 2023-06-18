@@ -28,7 +28,7 @@ Base *generate(void)
 		case 2:
 			return new C;
 		default:
-			return nullptr;
+			return (NULL);
 	}
 }
 
@@ -44,10 +44,28 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-	if(typeid(p) == typeid(A))
+	try
+	{
+		(void)dynamic_cast<A &>(p);
 		std::cout << "&func p: A" <<std::endl;
-	else if(typeid(p) == typeid(B))
-		std::cout << "&func p: B" <<std::endl;
-	else if(typeid(p) == typeid(C))
-		std::cout << "&func p: C" <<std::endl;
+	}
+	catch(std::exception &e)
+	{
+		try
+		{
+			(void)dynamic_cast<B &>(p);
+			std::cout << "&func p: B" <<std::endl;
+		}
+		catch(std::exception &e)
+		{
+			try
+			{
+				(void)dynamic_cast<C &>(p);
+				std::cout << "&func p: C" <<std::endl;
+			}
+			catch(std::exception &e)
+			{
+			}
+		}
+	}
 }

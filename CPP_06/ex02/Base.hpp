@@ -14,6 +14,7 @@
 #define BASE_HPP
 
 #include <iostream>
+#include <stdlib.h>
 
 class Base
 {
