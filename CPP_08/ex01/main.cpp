@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:54:12 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/23 20:06:49 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/24 14:57:16 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << '\n';
 	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:54:43 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/23 20:47:29 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/23 20:53:18 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 
 class Span
 {
+
 private:
 	unsigned int _maxsize;
 	std::vector<int> _numbers;
+
 public:
 	Span();
 	Span(unsigned int N);
