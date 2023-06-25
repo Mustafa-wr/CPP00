@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:54:43 by mradwan           #+#    #+#             */
-/*   Updated: 2023/06/23 20:53:18 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/06/24 16:55:34 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define ITER_HPP
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
+#include <climits>
 
 class Span
 {

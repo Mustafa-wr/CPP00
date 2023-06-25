@@ -12,40 +12,55 @@
 
 #include "MutantStack.hpp"
 #include <iostream>
-#include <stack>
 
 // int main()
 // {
-// 	MutantStack<int> op;
-
-// 	op.push(10);
-// 	op.push(9);
-// 	std::cout << op.begin() << "\n";
+// 	MutantStack<int> mstack;
+// 	mstack.push(5);
+// 	mstack.push(17);
+// 	std::cout << mstack.top() << std::endl;
+// 	mstack.pop();
+// 	std::cout << mstack.size() << std::endl;
+// 	mstack.push(3);
+// 	mstack.push(5);
+// 	mstack.push(737);
+// 	//[...]
+// 	mstack.push(0);
+// 	MutantStack<int>::iterator it = mstack.begin();
+// 	MutantStack<int>::iterator ite = mstack.end();
+// 	++it;
+// 	--it;
+// 	while (it != ite)
+// 	{
+// 		std::cout << *it << std::endl;
+// 		++it;
+// 	}
+// 	return 0;
 // }
-
 
 int main()
 {
 	MutantStack<int> mstack;
-	mstack.push(5);
-	mstack.push(17);
-	std::cout << mstack.top() << std::endl;
-	mstack.pop();
-	std::cout << mstack.size() << std::endl;
+	mstack.push(1);
+	mstack.push(2);
 	mstack.push(3);
+	mstack.push(4);
 	mstack.push(5);
-	mstack.push(737);
-	//[...]
-	mstack.push(0);
+	mstack.push(6);
+	std::cout << "size before pop " << mstack.size() << "\n";
+	mstack.pop();
+	std::cout << "size after pop " << mstack.size() << "\n";
+	std::cout << mstack.top() << "\n";
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
+	std::cout << "after increment " << *it << "\n";
 	--it;
-	while (it != ite)
-	{
-		std::cout << *it << std::endl;
-		++it;
-	}
-	std::stack<int> s(mstack);
+	std::cout << "after decrement " << *it << "\n\n";
+
+	std::cout << "end val " << *ite << "\n";
+	ite--;
+	std::cout << "after decrement(end) " << *ite << "\n";
 	return 0;
 }
+
