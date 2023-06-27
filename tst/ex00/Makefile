@@ -1,10 +1,10 @@
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror 
 
 all: btc
 
-btc: main.cpp BitcoinExchange.cpp
-	$(CC) $(CFLAGS) -o btc main.cpp BitcoinExchange.cpp
+btc: t.cpp
+	$(CC) $(CFLAGS) -o btc t.cpp
 
 clean:
 	rm -f btc
