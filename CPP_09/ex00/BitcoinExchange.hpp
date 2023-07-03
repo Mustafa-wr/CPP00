@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:54:43 by mradwan           #+#    #+#             */
-/*   Updated: 2023/07/02 21:33:19 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/07/03 15:35:15 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <stdlib.h>
+#include <string>
+#include <algorithm>
 
 class Bitcoin {
 private:
