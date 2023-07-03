@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 14:11:51 by mradwan           #+#    #+#             */
-/*   Updated: 2023/07/02 19:21:34 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/07/03 16:36:37 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,19 @@ int	validation(std::string &date)
 		return 0;
 	if(day < 1 || day > 31)
 		return 0;
+
 	if(month == 4 || month == 6 || month == 9 || month == 11)
+		if (day > 30)
+			return 0;
+
+	if (month == 2) 
 	{
-		if(day > 29)
+        if (day > 29)
 			return 0;
-		if(day == 29 && (year % 4 != 0 || (year % 100 == 0 \
-			&& year % 400 != 0)))
+        if (day == 29 && (year % 4 != 0 || \
+			(year % 100 == 0 && year % 400 != 0)))
 			return 0;
-	}
+    }
 	
 	return 1;
 }
