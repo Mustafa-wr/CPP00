@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 21:13:25 by mradwan           #+#    #+#             */
-/*   Updated: 2023/07/05 19:30:40 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/07/05 20:06:54 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,52 +100,43 @@ void	sorting2(std::list<int> &bar)
     }
 }
 
+int parse(char **av)
+{
+	int i = 1, j = 0;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if(!isdigit(av[i][j]))
+				return 0;
+			j++;
+		}
+		i++;
+	}
+	j = 0;
+	i = 1;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j] == ' ')
+			j++;
+		if(av[i][j] == '\0')
+			return 0;
+		i++;
+	}
+	return 1;
+}
 
-//   void sortWithContainer2(std::list<int>& sequence) {
-//     if (sequence.size() <= 1) {
-//       return;
-//     }
-//     std::list<int> left, right;
-//     std::list<int>::iterator it = sequence.begin();
-//     std::size_t middle = sequence.size() / 2;
-//     for (std::size_t i = 0; i < middle; ++i) {
-//       left.push_back(*it);
-//       ++it;
-//     }
-//     for (std::size_t i = middle; i < sequence.size(); ++i) {
-//       right.push_back(*it);
-//       ++it;
-//     }
-//     sortWithContainer2(left);
-//     sortWithContainer2(right);
-//     sequence.clear();
-//     std::list<int>::iterator leftIt = left.begin();
-//     std::list<int>::iterator rightIt = right.begin();
-//     while (leftIt != left.end() && rightIt != right.end()) {
-//       if (*leftIt <= *rightIt) {
-//         sequence.push_back(*leftIt);
-//         ++leftIt;
-//       } else {
-//         sequence.push_back(*rightIt);
-//         ++rightIt;
-//       }
-//     }
-//     while (leftIt != left.end()) {
-//       sequence.push_back(*leftIt);
-//       ++leftIt;
-//     }
-//     while (rightIt != right.end()) {
-//       sequence.push_back(*rightIt);
-//       ++rightIt;
-//     }
-//   }
-// }
 int main(int ac, char **av)
 {
 	std::vector<int> vector;
 	std::list<int> list;
-	if(ac < 2)
+	if(ac < 2 || !parse(av))
+	{
+		std::cout << "Error\n";
 		return 0;
+	}
 	
 	size_t i = 1;
 	while (av[i])
@@ -183,6 +174,7 @@ int main(int ac, char **av)
 	clock_t start = std::clock();
 	sorting1(vector);
 	clock_t end = std::clock();
+	
 	i = 0;
 	std::cout << "after :";
 	while(i < vector.size())
@@ -197,6 +189,7 @@ int main(int ac, char **av)
 	clock_t start2 = std::clock();
 	sorting2(list);
 	clock_t end2 = std::clock();
+
 	std::cout << "time to proscess " << list.size() << " elements with std::list : " \
 			  << static_cast<float>(end2 - start2) / 10000 << std::endl;
 	return 0;
