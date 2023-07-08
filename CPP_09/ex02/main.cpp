@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 21:13:25 by mradwan           #+#    #+#             */
-/*   Updated: 2023/07/05 21:26:18 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/07/07 17:27:04 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,14 @@ int main(int ac, char **av)
 	}
 	std::cout << std::endl;
 	std::cout << "time to proscess " << vector.size() << " elements with std::vector : " \
-			  << static_cast<float>(end - start) / 10000 << std::endl;
+			  << (end - start) / 1000.0 << "ms" << std::endl;
 	
 	clock_t start2 = std::clock();
 	sorting2(list);
 	clock_t end2 = std::clock();
 
 	std::cout << "time to proscess " << list.size() << " elements with std::list : " \
-			  << static_cast<float>(end2 - start2) / 10000 << std::endl;
+			  << (end2 - start2) / 1000.0 << "ms" << std::endl;
 	
 	return 0;
 }

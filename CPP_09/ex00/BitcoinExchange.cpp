@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 14:11:51 by mradwan           #+#    #+#             */
-/*   Updated: 2023/07/03 16:36:37 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/07/07 15:27:57 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ float	Bitcoin::the_result(const std::string &date, float value)
 	if(it == data.end() || it->first != date)
 	{
 		if(it == data.begin())
-			throw std::runtime_error("the date is earlier than : " + date);
+			throw std::runtime_error("the earliest date is 2009-01-02");
 		it--;
 	}
 	float the_price = it->second;

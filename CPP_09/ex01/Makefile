@@ -3,16 +3,16 @@ NAME	=	RPN
 SRCS	=	main.cpp				\
 			RPN.cpp
 
-CC		=	c++
+CXX		=	c++
 
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 OBJS	=	$(SRCS:.cpp=.o)
 
 all: 		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(OBJS) $(CXXFLAGS) -o $(NAME)
+			$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
 
 clean:
 			rm -f $(OBJS)

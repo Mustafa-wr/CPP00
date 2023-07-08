@@ -6,7 +6,7 @@
 /*   By: mradwan <mradwan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 19:41:04 by mradwan           #+#    #+#             */
-/*   Updated: 2023/07/04 15:13:54 by mradwan          ###   ########.fr       */
+/*   Updated: 2023/07/07 14:49:04 by mradwan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ float run(const std::string &str)
 	std::istringstream iss(str);
 	std::string	obj;
 	
-	while(iss >> std::skipws >> obj)
+	while(iss >> obj)
 	{
 		if(obj.length() != 1)
 			throw (std::runtime_error("Error\n"));
